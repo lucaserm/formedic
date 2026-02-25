@@ -11,6 +11,11 @@ const envSchema = z.object({
     .nonnegative()
     .default(100)
     .transform((v) => v || Infinity),
+  DATABASE_AUTO_MIGRATION: z
+    .string()
+    .toLowerCase()
+    .default("true")
+    .transform((v) => v === "true"),
 });
 
 export const env = envSchema.parse(process.env);

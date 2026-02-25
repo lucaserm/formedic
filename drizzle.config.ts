@@ -3,7 +3,7 @@ import { defineConfig } from "drizzle-kit";
 import { env } from "@/env";
 
 export default defineConfig({
-  dialect: "sqlite",
+  dialect: "postgresql",
   schema: "./src/db/schema/index.ts",
   out: "./drizzle",
   dbCredentials: {

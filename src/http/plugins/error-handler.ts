@@ -114,12 +114,6 @@ export function errorHandler(): ErrorHandler {
 
     set.status = statusCode;
 
-    /** @deprecated used for retro compatibility */
-    if (statusCode === 498) {
-      set.status = 401;
-      status(401, { message: safeMessage, statusCode });
-    }
-
     if (error instanceof AppError && error.data !== undefined) {
       console.log({
         message: "Has error data",
